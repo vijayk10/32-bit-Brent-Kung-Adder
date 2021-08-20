@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML><HEAD>
+<TITLE>Timing Analyzer report for brent_kung_adder</TITLE>
+
+<link rel="stylesheet" type="text/css" href="brent_kung_adder-Timing Analyzer.htm_files/css/reset.css">
+<link rel="stylesheet" type="text/css" href="brent_kung_adder-Timing Analyzer.htm_files/css/base.css">
+<link rel="stylesheet" type="text/css" href="brent_kung_adder-Timing Analyzer.htm_files/jquery-ui/1.10.2/css/smoothness/jquery-ui-1.10.2.custom.min.css">
+<link rel="stylesheet" type="text/css" href="brent_kung_adder-Timing Analyzer.htm_files/jquery-layout/1.3.0.rc30.79/jquery.layout-1.3.0.rc30.79.css">
+<link rel="stylesheet" type="text/css" href="brent_kung_adder-Timing Analyzer.htm_files/css/override.css">
+
+<script type="text/javascript" src="brent_kung_adder-Timing Analyzer.htm_files/jquery/1.11.3/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="brent_kung_adder-Timing Analyzer.htm_files/jquery-ui/1.10.2/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="brent_kung_adder-Timing Analyzer.htm_files/jquery-layout/1.3.0.rc30.79/jquery.layout-1.3.0.rc30.79.min.js"></script>
+
+<script type="text/javascript">
+
+// jQuery Ready event
+$(document).ready(function () {
+		$("#main_layout").show().layout({
+				west: {
+					size: 300
+				},
+				center: {
+					// This is needed because the center pane contains an iframe.
+					// https://groups.google.com/d/msg/jquery-ui-layout/qT4rnGxnvYA/CH55dRwdWJoJ
+					maskContents: true
+				}
+		});
+		$(".toc_entry").hover(
+			// mouse enter
+			function (event) {
+				$(this).addClass("ui-state-highlight");
+			},
+			// mouse leave
+			function (event) {
+				$(this).removeClass("ui-state-highlight");
+			}
+		);
+		// When the user clicks on a TOC entry, display the content
+		// in the View pane.
+		$(".toc_entry").click(function (event) {
+				var title = $(this).html();
+				var filename = $(this).attr("id").substr(4) + ".htm";
+				var view = $("#view_content");
+				view.attr("src", "brent_kung_adder-Timing Analyzer.htm_files/" + filename);
+				$("#view_title").html(title);
+				// Expand/collapse folders.
+				var parent_li = $(this).parent();
+				if (parent_li.hasClass("rdb_closed_folder"))
+				{
+					parent_li.removeClass("rdb_closed_folder");
+					parent_li.addClass("rdb_opened_folder");
+					parent_li.children("div").show();
+				}
+				else if (parent_li.hasClass("rdb_opened_folder"))
+				{
+					parent_li.removeClass("rdb_opened_folder");
+					parent_li.addClass("rdb_closed_folder");
+					parent_li.children("div").hide();
+				}
+		});
+});
+
+</script>
+
+</HEAD>
+
+<BODY>
+<div id="main_layout" style="height:100%;display:none">
+	<div class="ui-layout-north">
+		<h1 class="ui-widget-header" style="padding:10px">Timing Analyzer report for brent_kung_adder</h1>
+	</div>
+	<div class="ui-layout-center ui-widget-content">
+		<div class="ui-widget-header" id="view_title">Data not available</div>
+		<div class="ui-layout-content ui-widget-content" id="view_container" style="padding:0;overflow:hidden"><iframe id="view_content"></iframe></div>
+	</div>
+
+	<div class="ui-layout-west">
+		<div class="ui-widget-header">Table of Contents</div>
+		<div class="ui-layout-content ui-widget-content" id="toc" style="padding:0"><ul><li class="rdb_text_type"><span class="toc_entry" id="toc_1">Legal Notice</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_2">Timing Analyzer</span><div style="display:none"><ul><li class="rdb_text_type"><span class="toc_entry" id="toc_3">Legal Notice</span></li><li class="rdb_summary_table_type"><span class="toc_entry" id="toc_4">Timing Analyzer Summary</span></li><li class="rdb_table_type"><span class="toc_entry" id="toc_5">Parallel Compilation</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_6">Clocks</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_7">Slow 1200mV 85C Model</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_8">Slow 1200mV 85C Model Fmax Summary</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_9">Timing Closure Recommendations</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_10">Slow 1200mV 85C Model Setup Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_11">Slow 1200mV 85C Model Hold Summary</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_12">Slow 1200mV 85C Model Recovery Summary</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_13">Slow 1200mV 85C Model Removal Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_14">Slow 1200mV 85C Model Minimum Pulse Width Summary</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_15">Slow 1200mV 85C Model Worst-Case Timing Paths</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_16">Slow 1200mV 85C Model Setup: &apos;clk&apos;</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_17">Slow 1200mV 85C Model Hold: &apos;clk&apos;</span></li></ul></div></li><li class="rdb_text_type"><span class="toc_entry" id="toc_18">Slow 1200mV 85C Model Metastability Summary</span></li></ul></div></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_19">Slow 1200mV 0C Model</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_20">Slow 1200mV 0C Model Fmax Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_21">Slow 1200mV 0C Model Setup Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_22">Slow 1200mV 0C Model Hold Summary</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_23">Slow 1200mV 0C Model Recovery Summary</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_24">Slow 1200mV 0C Model Removal Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_25">Slow 1200mV 0C Model Minimum Pulse Width Summary</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_26">Slow 1200mV 0C Model Worst-Case Timing Paths</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_27">Slow 1200mV 0C Model Setup: &apos;clk&apos;</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_28">Slow 1200mV 0C Model Hold: &apos;clk&apos;</span></li></ul></div></li><li class="rdb_text_type"><span class="toc_entry" id="toc_29">Slow 1200mV 0C Model Metastability Summary</span></li></ul></div></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_30">Fast 1200mV 0C Model</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_31">Fast 1200mV 0C Model Setup Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_32">Fast 1200mV 0C Model Hold Summary</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_33">Fast 1200mV 0C Model Recovery Summary</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_34">Fast 1200mV 0C Model Removal Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_35">Fast 1200mV 0C Model Minimum Pulse Width Summary</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_36">Fast 1200mV 0C Model Worst-Case Timing Paths</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_37">Fast 1200mV 0C Model Setup: &apos;clk&apos;</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_38">Fast 1200mV 0C Model Hold: &apos;clk&apos;</span></li></ul></div></li><li class="rdb_text_type"><span class="toc_entry" id="toc_39">Fast 1200mV 0C Model Metastability Summary</span></li></ul></div></li><li class="rdb_table_type"><span class="toc_entry" id="toc_40">Multicorner Timing Analysis Summary</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_41">Advanced I/O Timing</span><div style="display:none"><ul><li class="rdb_table_type"><span class="toc_entry" id="toc_42">Board Trace Model Assignments</span></li><li class="rdb_table_type"><span class="toc_entry" id="toc_43">Input Transition Times</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_44">Signal Integrity Metrics</span><div style="display:none"><ul><li class="rdb_table_type"><span class="toc_entry" id="toc_45">Signal Integrity Metrics (Slow 1200mv 0c Model)</span></li><li class="rdb_table_type"><span class="toc_entry" id="toc_46">Signal Integrity Metrics (Slow 1200mv 85c Model)</span></li><li class="rdb_table_type"><span class="toc_entry" id="toc_47">Signal Integrity Metrics (Fast 1200mv 0c Model)</span></li></ul></div></li></ul></div></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_48">Clock Transfers</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_49">Setup Transfers</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_50">Hold Transfers</span></li></ul></div></li><li class="rdb_text_type"><span class="toc_entry" id="toc_51">Report TCCS</span></li><li class="rdb_text_type"><span class="toc_entry" id="toc_52">Report RSKM</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_53">Unconstrained Paths</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_54">Unconstrained Paths Summary</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_55">Clock Status Summary</span></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_56">Setup Analysis</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_57">Unconstrained Input Ports</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_58">Unconstrained Output Ports</span></li></ul></div></li><li class="rdb_closed_folder"><span class="toc_entry" id="toc_59">Hold Analysis</span><div style="display:none"><ul><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_60">Unconstrained Input Ports</span></li><li class="rdb_timing_table_type"><span class="toc_entry" id="toc_61">Unconstrained Output Ports</span></li></ul></div></li></ul></div></li><li class="rdb_messages_type"><span class="toc_entry" id="toc_62">Timing Analyzer Messages</span></li></ul></div></li></ul></div>
+	</div>
+</div>
+<noscript>JavaScript must be enabled to view the report.</noscript>
+</BODY>
+</HTML>
